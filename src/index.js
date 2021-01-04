@@ -17,7 +17,7 @@ const store = createStore(reducer, composeEnhancers(
 const app = (
   <React.StrictMode>
      <Provider store={store} >
-    <BrowserRouter  >
+    <BrowserRouter basename="/github_search"  >
     <App />
     </BrowserRouter>
     </Provider>

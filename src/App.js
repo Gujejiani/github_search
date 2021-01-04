@@ -1,6 +1,6 @@
 
 import './App.css';
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Mainpage from './Container/Main'
 import React, {useEffect} from 'react'
 import * as action  from './store/actions/index'
@@ -21,10 +21,12 @@ props.sendingRequest()
   return (
 
     <div className="App">
-     
+     <Switch>
         <Route exact path="/:username" component={userPage} />
         <Route path="/:username/not_found" component={notFound} />
-      <Route exact path="/"  component={Mainpage} />
+      <Route component={Mainpage} />
+      
+      </Switch>
       {/* <Mainpage/> */}
 
     </div>
