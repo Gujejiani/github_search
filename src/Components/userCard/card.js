@@ -41,14 +41,7 @@ const Card = (props)=>{
                 
               </div>  
          
-           {/* { props.showOrgInfo ?    <div className={classes.Organization} >
-                  <h3>Organization</h3> 
-                  { props.orgName?   <div>
-          <img src={props.organizationImg} className={classes.AvatarImg} alt="orgImg"/>
-              <a className={classes.Link}  href={props.orgLink} target="__blank" >  <label  >{props.orgName}</label></a>
-              </div> : <span>Organization not found</span> }
-              </div>:null
-              } */}
+      
     </div>
     )
 }

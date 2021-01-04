@@ -7,18 +7,26 @@ const Search = (props) =>{
 
     //saveing input value
     const [search, setSearch] = useState('')
-    
 
-     //maneaging show or not last three searched results
-    const [searchedUsers, showSearchedUsers]=useState(false)
+   
+    
+ 
+    //  //maneaging show or not last three searched results
+     const [searchedUsers, showSearchedUsers]=useState(false)
 
 let  searched =   JSON.parse( localStorage.getItem('searchResults')) ?  JSON.parse( localStorage.getItem('searchResults')) :[]
 
 
-//onBlur  function
-function setSearchItems(e, username){
-  
-    setSearch(username.searched)
+
+
+
+
+
+
+const searchUsingLastSearchs =(e, username, mode)=>{
+    console.log(mode)
+    setSearch(username)
+    props.search(e, username)
     showSearchedUsers(false)
 }
 
@@ -26,7 +34,7 @@ const searchedList = (
  
 
     searched.map(user=>{
-        return  <li key={user.searched + Math.random() } onClick={(e)=>{setSearchItems(e, user)}}
+        return  <li key={user.searched + Math.random() } onClick={(e)=>{searchUsingLastSearchs(e, user.searched, searchedUsers)}}
          className={classes.SearchedUsers} > {user.searched} </li>
     })
     )
@@ -41,7 +49,7 @@ const searchedList = (
              //saveing time to get input data, before bluring
           setTimeout(()=>{
                 showSearchedUsers(false)
-            }, 150)
+            }, 100)
             
             }} 
           value={search}

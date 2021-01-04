@@ -51,7 +51,12 @@ setSubmited(true)
 
 }
 
-
+//searching with last three searches
+const searching =(e, user)=>{
+  console.log(user)
+searchUser(props, user)
+setSubmited(true)
+}
 const userCards =(
   //mapping every user, which we have in redux store
   props.users.map(obj=>{
@@ -77,7 +82,7 @@ const userCards =(
                  
                 <Nav />
               {  props.loading?  <Spinner />:    <div>
-                <SearchBox searching={submited} userSearched={userSearchSubmitHandler} />
+                <SearchBox searching={submited} userSearched={userSearchSubmitHandler} search={searching} />
            <div className={classes.hideButton} >
                <Button buttonClicked={viewChanged}
             buttonText={listView ? 'turn to grid view':'turn to list view'} viewMode={listView} />
