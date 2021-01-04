@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import {Route} from 'react-router-dom'
+import Mainpage from './Container/Main'
+import React, {useEffect} from 'react'
+import * as action  from './store/actions/index'
+import {connect} from 'react-redux'
+import userPage from './Container/UserPage/UserPage'
+import notFound from './Components/not_found/error'
+
+function App(props) {
+
+
+  useEffect(()=>{
+    //this.props.fetchingDataStared
+props.fetchingDataStarted()
+props.sendingRequest()
+}, )
+
+
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+        <Route exact path="/:username" component={userPage} />
+        <Route path="/:username/not_found" component={notFound} />
+      <Route exact path="/"  component={Mainpage} />
+      {/* <Mainpage/> */}
+
     </div>
+   
   );
 }
 
-export default App;
+const mapDispatchToProps = dispatch =>{
+return{
+
+  sendingRequest: ()=> dispatch(action.usersResived()),
+  fetchingDataStarted: ()=>dispatch(action.actionStarted())
+}
+
+   
+}
+export default connect(null, mapDispatchToProps)(App);

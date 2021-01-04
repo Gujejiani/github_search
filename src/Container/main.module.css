@@ -1,0 +1,19 @@
+.listView {
+  flex-direction: column;
+}
+
+.gridView {
+  flex-direction: row;
+}
+.cardSpinner {
+  visibility: static;
+}
+.hide {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .hideButton {
+    display: none;
+  }
+}

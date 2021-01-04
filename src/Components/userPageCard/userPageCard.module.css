@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+  color: #fff;
+  align-items: center;
+  max-width: 500px;
+}
+
+.imgInfo_repos_Conteiner {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  justify-content: space-between;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90px;
+  margin-bottom: 120px;
+}
+.Img {
+  width: 150px;
+  border-radius: 50%;
+}
+.userName {
+  cursor: pointer;
+}
+
+.Link {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(16, 170, 170);
+  font-weight: bold;
+}
+.ReposInfo {
+  margin-left: 20px;
+}
+.ReposInfo label {
+  font-size: 20px;
+  font-weight: bold;
+}
+.ReposInfo li {
+  margin-top: 15px;
+}
+
+.Organization {
+  margin-top: 40px;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  align-items: center;
+}
+.Organization img {
+  margin: 20px 0;
+  width: 50px;
+}
+.Organization label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .Img {
+    width: 70px;
+  }
+  .imgInfo_repos_Conteiner {
+    justify-content: space-between;
+  }
+}

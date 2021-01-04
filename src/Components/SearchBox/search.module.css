@@ -1,0 +1,65 @@
+.search_Parrent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.Form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 40px;
+  position: relative;
+}
+.input_and_search {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+}
+
+.Search {
+  margin-top: 100px;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  border: 1px solid rgb(151, 187, 175);
+}
+.SubmitSearch {
+  background-color: rgb(32, 37, 37);
+  border: 1px solid rgb(151, 187, 175);
+  color: rgb(211, 173, 173);
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.Searched {
+  list-style: none;
+  height: 90px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+.SearchedUser {
+  padding-left: 10px;
+}
+
+.SearchedUsers {
+  padding: 5px;
+}
+.SearchedUsers:hover {
+  background-color: rgb(243, 239, 239);
+}
+
+.Search:focus {
+  outline: 1px solid rgb(16, 170, 170);
+}
+
+.show {
+  visibility: visible;
+  cursor: pointer;
+}
+.hide {
+  visibility: hidden;
+}
+.searchingSpinner {
+  position: absolute;
+  left: -32px;
+  top: 50px;
+}
