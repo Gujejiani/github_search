@@ -1,0 +1,53 @@
+.Loader {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 50vh;
+  align-items: center;
+}
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  align-items: center;
+}
+
+.githubIcon {
+  width: 40px;
+  color: rgb(39, 152, 156);
+  margin-left: 10px;
+}
+
+.Dots_Parrent {
+  display: flex;
+  width: 100%;
+
+  justify-content: center;
+}
+
+.Dot {
+  width: 10px;
+  margin-left: 10px;
+  background-color: rgb(39, 152, 156);
+  border-radius: 50%;
+  height: 10px;
+  animation-name: Loader;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.Dot_2 {
+  background-color: #2e9fcc;
+  animation-delay: 0.4s;
+}
+.Dot_3 {
+  background-color: #ee8530;
+  animation-delay: 0.8s;
+}
+
+@keyframes Loader {
+  50% {
+    opacity: 0;
+    transform: scale(0.7) translateY(10px);
+  }
+}

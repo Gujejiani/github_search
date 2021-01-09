@@ -24,9 +24,14 @@ let  searched =   JSON.parse( localStorage.getItem('searchResults')) ?  JSON.par
 
 
 const searchUsingLastSearchs =(e, username, mode)=>{
-    console.log(mode)
+   
     setSearch(username)
     props.search(e, username)
+    showSearchedUsers(false)
+}
+
+const submitHandler =(e, search)=>{
+    props.userSearched(e, search)
     showSearchedUsers(false)
 }
 
@@ -34,13 +39,13 @@ const searchedList = (
  
 
     searched.map(user=>{
-        return  <li key={user.searched + Math.random() } onClick={(e)=>{searchUsingLastSearchs(e, user.searched, searchedUsers)}}
+        return  <li key={user.searched + Math.random() } onClick={(e)=>{searchUsingLastSearchs(e, user.searched)}}
          className={classes.SearchedUsers} > {user.searched} </li>
     })
     )
 
     return <div className={classes.search_Parrent}  >
-        <form  onSubmit={(e)=>props.userSearched(e, search)}  className={classes.Form} >
+        <form  onSubmit={(e)=>submitHandler(e, search)}  className={classes.Form} >
      <div className={classes.input_and_search} >
     <div className={classes.searchingSpinner}  >  <Spinner show={props.searching? true : false}  /></div>  
           <input 
@@ -49,7 +54,7 @@ const searchedList = (
              //saveing time to get input data, before bluring
           setTimeout(()=>{
                 showSearchedUsers(false)
-            }, 100)
+            }, 120)
             
             }} 
           value={search}

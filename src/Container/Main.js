@@ -4,13 +4,13 @@ import Content from '../UI/content/content';
 import Button from '../UI/Button/button'
 import Nav from '../UI/nav/nav';
 import UserCard from '../Components/userCard/card';
-import SearchBox  from '../Components/SearchBox/search'
-import {connect} from 'react-redux'
-import { useState, useEffect} from 'react'
-import Spinner from '../UI/spinner/spinner'
-import * as action from '../store/actions/index'
-
-import {searchUser} from '../Components/userSearch/userSearch'
+import SearchBox  from '../Components/SearchBox/search';
+import {connect} from 'react-redux';
+import { useState, useEffect} from 'react';
+// import Spinner from '../UI/spinner/spinner';
+import * as action from '../store/actions/index';
+import GithubLoader from '../UI/githubLoader/Loader';
+import {searchUser} from '../Components/userSearch/userSearch';
 
 
 function Main(props){
@@ -53,7 +53,7 @@ setSubmited(true)
 
 //searching with last three searches
 const searching =(e, user)=>{
-  console.log(user)
+ 
 searchUser(props, user)
 setSubmited(true)
 }
@@ -79,9 +79,10 @@ const userCards =(
 
     return(
        <div>
+        
                  
                 <Nav />
-              {  props.loading?  <Spinner />:    <div>
+              {  props.loading?  <GithubLoader/>:    <div>
                 <SearchBox searching={submited} userSearched={userSearchSubmitHandler} search={searching} />
            <div className={classes.hideButton} >
                <Button buttonClicked={viewChanged}
